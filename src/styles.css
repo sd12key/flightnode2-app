@@ -1,0 +1,106 @@
+/* Flightnode2 App */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font_roboto: "Roboto", sans-serif;
+  --font_roboto_condensed: "Roboto Condensed", sans-serif;
+  --font_roboto_serif: "Roboto Serif", serif;
+  --font_stint_ultra_condensed: "Stint Ultra Condensed", serif;
+  --content_width: 800px;
+}
+
+html {
+  font-size: 16px;
+  font-family: var(--font_roboto_condensed);
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  padding: 20px;
+  margin: 0;
+}
+
+#root {
+  width: var(--content_width);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+header,
+footer,
+nav,
+main {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+}
+
+nav {
+  background-color: skyblue;
+}
+
+footer {
+  color: beige;
+}
+
+.admin-main {
+  background-color: wheat;
+  color: saddlebrown;
+}
+
+.home-main {
+  background-color: none;
+  color: lightslategray;
+}
+
+.admin-theme {
+  background-color: royalblue;
+}
+
+.home-theme {
+  background-color: steelblue;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font_roboto_condensed);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.admin-btn {
+  background: tan;
+  color: black;
+  width: 160px;
+}
+
+.home-btn {
+  background: navajowhite;
+  color: darkslategray;
+  width: 160px;
+}
+
+.btn:hover {
+  filter: brightness(0.95);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
