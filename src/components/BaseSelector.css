@@ -1,0 +1,15 @@
+.base-selector {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: none;
+  font-family: var(--font_roboto_condensed);
+  font-size: 16px;
+  outline: none;
+}
+
+.base-selector:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}

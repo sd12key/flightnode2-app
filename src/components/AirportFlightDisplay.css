@@ -1,0 +1,77 @@
+.aft-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.aft-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.aft-table thead {
+  background-color: skyblue;
+  color: midnightblue;
+  font-weight: bold;
+}
+
+.afd-airport-section {
+  margin-top: 1rem;
+}
+
+.afd-airport-section h2 {
+  color: darkslategray;
+}
+
+.afd-arrivals,
+.afd-departures {
+  margin-top: 0.5rem;
+}
+
+.afd-arrivals h3,
+.afd-departures h3 {
+  color: steelblue;
+}
+
+.aft-table th,
+.aft-table td {
+  padding: 0.1rem 0.2rem;
+  border-bottom: 2px solid skyblue;
+  border-top: 2px solid skyblue;
+  vertical-align: top;
+  text-align: left;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.aft-col-date {
+  width: 90px;
+}
+
+.aft-col-time {
+  width: 55px;
+}
+
+.aft-col-gate {
+  width: 60px;
+}
+
+.aft-col-flight {
+  width: 80px;
+}
+
+.aft-col-airline {
+  width: 110px;
+}
+
+.aft-col-city {
+  width: 120px;
+}
+
+.aft-col-aircraft {
+  width: 110px;
+}
+
+.aft-col-airport {
+}

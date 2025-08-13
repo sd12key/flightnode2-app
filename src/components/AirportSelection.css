@@ -1,0 +1,28 @@
+.airport-selection {
+  width: 500px;
+  display: grid;
+  gap: 10px;
+}
+
+.fields-row {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-city {
+  width: 180px;
+}
+
+.input-state {
+  width: 49px;
+}
+
+.input-airport-code {
+  width: 60px;
+}
+
+.input-airport-name {
+  width: 180px;
+}
