@@ -7,7 +7,7 @@ export default function Button({
   className = "",
   disabled = false,
   loading = false,
-  loadingContent = "Loading...",
+  loadingContent = ".....",
   type = "button",
   ...rest
 }) {
@@ -15,17 +15,21 @@ export default function Button({
 
   const handleClick = (e) => {
     if (disabled || loading) return;
+    console.log("button clicked");
+
+    e.preventDefault();
+    e.stopPropagation();
+
     if (to) navigate(to);
     if (onClick) onClick(e);
   };
 
   return (
     <button
-      type={type}
+      type={type || "button"}
       className={`btn ${className}`}
       onClick={handleClick}
       disabled={disabled || loading}
-      aria-busy={loading}
       {...rest}
     >
       {loading ? loadingContent : children}

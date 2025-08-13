@@ -1,0 +1,56 @@
+.spinner-search {
+  display: inline-block;
+  font-size: 16px;
+  animation: spin-search 1.2s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spin-search {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.magnifying-glass {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.search-btn {
+  width: 200px;
+  background-color: cadetblue;
+  color: white;
+}
+
+.wait-for-flights {
+  width: 100%;
+  padding: 20px;
+  color: darkslategray;
+  background-color: darkgray;
+}
+
+.home-main img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space under image */
+}
+
+.flights-not-found {
+  width: 100%;
+  padding: 20px;
+  color: darkslategray;
+  background-color: darkgray;
+}
+
+.home-main img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+pre {
+  color: black;
+}
