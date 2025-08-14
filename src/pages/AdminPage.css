@@ -1,0 +1,72 @@
+.admin-input-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-card h2 {
+  margin-bottom: 10px;
+  color: darkslategrey;
+}
+
+.admin-input-field-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-input-two-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.admin-flight-dates-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.capacity-input {
+  width: 200px;
+}
+
+.aircraft-type-input {
+  width: 520px;
+}
+
+.input-flight-number {
+  width: 100px;
+}
+
+.admin-aircraft-selector {
+  width: 620px;
+}
+
+.admin-add-airline-button,
+.admin-add-flight-button,
+.admin-add-aircraft-button,
+.admin-add-flight-button {
+  margin-top: 15px;
+  width: 170px;
+  align-self: flex-end;
+  background-color: steelblue;
+  color: white;
+}
+
+.status {
+  margin-top: 15px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.status.error,
+.status.success {
+  padding: 10px 15px;
+  background-color: pink;
+  color: brown;
+}
+
+.status.success {
+  background-color: aquamarine;
+  color: darkgreen;
+}

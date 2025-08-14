@@ -12,7 +12,7 @@
 
 .aft-table thead {
   background-color: skyblue;
-  color: midnightblue;
+  color: white;
   font-weight: bold;
 }
 
@@ -74,4 +74,5 @@
 }
 
 .aft-col-airport {
+  width: auto;
 }

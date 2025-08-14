@@ -7,7 +7,6 @@ export default function Header({ title, loading }) {
 
   return (
     <header className={isAdminPage ? "admin-theme" : "home-theme"}>
-      {/* React icon overlay when loading */}
       {loading && (
         <div className="loading-overlay">
           <GrUpdate className="spinner" />

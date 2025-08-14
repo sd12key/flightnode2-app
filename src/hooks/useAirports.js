@@ -1,30 +1,30 @@
 // src/hooks/useAirports.js
 import { useEffect, useState } from "react";
-import { getCitiesWithAirports } from "../api/cityService";
-import { mapCitiesToAirports } from "../api/mappers";
+import { getAirportsWithCities } from "../api/airportService";
+import { mapAirportsToSelectData } from "../api/mappers";
 
 export function useAirports() {
   const [airports, set_airports] = useState([]);
   const [airportsLoading, set_airportsLoading] = useState(true);
   const [airportsError, set_airportsError] = useState(null);
-  const [refresh, set_refresh] = useState(0); // 👈 trigger
+  const [refreshAirports, set_refreshAirports] = useState(0);
 
   useEffect(() => {
     const ac = new AbortController();
     set_airportsLoading(true);
     set_airportsError(null);
 
-    getCitiesWithAirports(ac.signal)
-      .then((cities) => set_airports(mapCitiesToAirports(cities)))
+    getAirportsWithCities(ac.signal)
+      .then((airports) => set_airports(airports))
       .catch((err) => {
         if (err.name !== "AbortError") set_airportsError(err);
       })
       .finally(() => set_airportsLoading(false));
 
     return () => ac.abort();
-  }, [refresh]);
+  }, [refreshAirports]);
 
-  const reload = () => set_refresh((x) => x + 1);
+  const reload = () => set_refreshAirports((x) => x + 1);
 
   return { airports, airportsLoading, airportsError, reload };
 }
