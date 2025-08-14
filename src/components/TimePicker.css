@@ -1,9 +1,9 @@
-.datepicker-container {
+.timepicker-container {
   display: flex;
   flex-direction: column;
 }
 
-.datepicker {
+.timepicker {
   display: block;
   padding: 4px 8px;
   height: 34px;
@@ -19,32 +19,32 @@
   -webkit-user-select: none;
 }
 
-.datepicker:focus {
+.timepicker:focus {
   border: none;
   border-radius: 0;
   outline: none;
 }
 
 /* remove browser-specific styling */
-.datepicker::-webkit-calendar-picker-indicator {
+.timepicker::-webkit-calendar-picker-indicator {
   opacity: 1;
   filter: grayscale(30%);
   cursor: pointer;
 }
 
-.datepicker::-webkit-datetime-edit-fields-wrapper {
+.timepicker::-webkit-datetime-edit-fields-wrapper {
   padding: 0;
 }
 
-.datepicker:focus,
-.datepicker:active,
-.datepicker:focus-visible {
+.timepicker:focus,
+.timepicker:active,
+.timepicker:focus-visible {
   outline: none !important;
   box-shadow: none !important;
   border: none !important;
 }
 
-.date-label {
+.time-label {
   display: block;
   font-family: var(--font_roboto_condensed);
   font-size: 12px;

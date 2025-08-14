@@ -15,7 +15,6 @@ export default function Button({
 
   const handleClick = (e) => {
     if (disabled || loading) return;
-    console.log("button clicked");
 
     e.preventDefault();
     e.stopPropagation();

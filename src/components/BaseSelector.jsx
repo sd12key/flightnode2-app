@@ -2,7 +2,7 @@ import React from "react";
 import "./BaseSelector.css";
 
 /**
- * Generic dropdown (controlled).
+ * Generic dropdown selector
  * Props:
  * - id: string
  * - className?: string

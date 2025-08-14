@@ -1,5 +1,3 @@
-/* Flightnode2 App */
-
 * {
   margin: 0;
   padding: 0;
@@ -79,12 +77,8 @@ footer {
   color: beige;
 }
 
+.home-main,
 .admin-main {
-  background-color: wheat;
-  color: saddlebrown;
-}
-
-.home-main {
   background-color: none;
   display: flex;
   flex-direction: column;
@@ -93,6 +87,22 @@ footer {
   color: darkcyan;
 }
 
+.admin-main {
+  color: saddlebrown;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: wheat;
+}
+
+input {
+  font-family: var(--font_roboto_condensed);
+}
 .admin-theme {
   background-color: royalblue;
 }
@@ -178,7 +188,6 @@ footer {
 
 .input-label,
 .dropdown-label {
-  /* display: block; */
   font-family: var(--font_roboto_condensed);
   font-size: 12px;
   color: dimgray;
@@ -212,5 +221,16 @@ footer {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.fade-out {
+  animation: fadeOut 7s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }

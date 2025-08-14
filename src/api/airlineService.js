@@ -1,21 +1,19 @@
 import { API_BASE_URL } from "./config";
 
-export async function searchFlights(params, signal) {
-  const query = new URLSearchParams(params).toString();
-  const url = `${API_BASE_URL}/api/flight-search?${query}`;
+export async function getAirlinesWithAircrafts(signal) {
+  const url = `${API_BASE_URL}/api/airlines?show-aircrafts=true`;
   const res = await fetch(url, { signal });
-  if (!res.ok) throw new Error(`Error ${res.status}`);
+  if (!res.ok)
+    throw new Error(`Database error when loading airlines: ${res.status}`);
   return res.json();
 }
 
-export async function createFlight(payload, signal) {
-  const res = await fetch(`${API_BASE_URL}/api/flight`, {
+export async function createAirline(name, signal) {
+  const res = await fetch(`${API_BASE_URL}/api/airline`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" },
     signal,
+    body: JSON.stringify({ name }),
   });
 
   if (!res.ok) {

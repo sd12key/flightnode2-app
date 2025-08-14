@@ -51,7 +51,7 @@ test("prefills inputs when selecting an airport from dropdown", () => {
   renderComp();
 
   const select = screen.getByRole("combobox");
-  fireEvent.change(select, { target: { value: "1" } }); // pick JFK
+  fireEvent.change(select, { target: { value: "1" } });
 
   expect(screen.getByLabelText(/City/i)).toHaveValue("New York");
   expect(screen.getByLabelText(/State/i)).toHaveValue("NY");

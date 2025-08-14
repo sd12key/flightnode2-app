@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import DatePicker from "../components/DatePicker";
 import AirportSelection from "../components/AirportSelection";
@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import { useAirports } from "../hooks/useAirports";
 import { handleSearchFlights } from "../utils/handleSearchFlights";
 import { GrUpdate, GrSearch } from "react-icons/gr";
+import { mapAirportsToSelectData } from "../api/mappers";
 import "./HomePage.css";
 
 export default function HomePage() {
@@ -29,16 +30,19 @@ export default function HomePage() {
 
   const [hasSearched, set_hasSearched] = useState(false);
 
+  const [errorVisible, set_errorVisible] = useState(false);
   useEffect(() => {
-    console.log("Flights state:", flights);
-  }, [flights]);
+    if (!(airportsError || errorFlights)) return;
+    set_errorVisible(true);
+    const t = setTimeout(() => set_errorVisible(false), 5000);
+    return () => clearTimeout(t);
+  }, [airportsError, errorFlights]);
 
   function handle_change(values) {
     set_query(values);
   }
 
   function onClickSearch() {
-    console.log("Flight search button clicked");
     const ac = new AbortController();
     set_hasSearched(true);
     set_flights({
@@ -56,16 +60,13 @@ export default function HomePage() {
       signal: ac.signal,
     });
 
-    console.log("-->ERROR flights:", errorFlights);
     return () => ac.abort();
   }
-
-  console.log("Flights state:", flights);
 
   const thereAreFlights =
     flights.departures.length > 0 || flights.arrivals.length > 0;
 
-  // const flightsByAirport = organizeFlightsByAirport(flights);
+  const selectAirports = mapAirportsToSelectData(airports);
 
   return (
     <>
@@ -73,7 +74,7 @@ export default function HomePage() {
         <div className="nav-selections-container">
           <div className="airport-selection-container">
             <AirportSelection
-              airports={airports}
+              airports={selectAirports}
               airportsLoading={airportsLoading}
               reload={reload}
               on_change={handle_change}
@@ -118,7 +119,7 @@ export default function HomePage() {
         {(loadingFlights || airportsLoading) && (
           <h3 className="wait-for-flights">Please wait...</h3>
         )}
-        {(airportsError || errorFlights) && (
+        {errorVisible && (
           <h3 className="error-message">
             Error connecting to Flightnode API server
           </h3>
@@ -132,10 +133,6 @@ export default function HomePage() {
           />
         )}
 
-        {/* {hasSearched && flightsLoading && (
-          <div className="loading-indicator">Searching flights...</div>
-        )} */}
-
         {hasSearched && !loadingFlights && !thereAreFlights && (
           <h3 className="flights-not-found">No flights found</h3>
         )}
@@ -143,6 +140,7 @@ export default function HomePage() {
         {hasSearched && !loadingFlights && !errorFlights && thereAreFlights && (
           <>
             <AirportFlightDisplay flights={flights} />
+            <p>&nbsp; </p>
           </>
         )}
       </main>

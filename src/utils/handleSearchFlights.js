@@ -13,7 +13,6 @@ export async function handleSearchFlights({
   setError(null);
 
   try {
-    // flights LEAVING from the selected airports)
     const departureParams = {
       "start-date": startDate,
       "end-date": endDate,
@@ -23,7 +22,6 @@ export async function handleSearchFlights({
       "departure-airport-code": query.code,
     };
 
-    // flights ARRIVING at the selected airports
     const arrivalParams = {
       "start-date": startDate,
       "end-date": endDate,

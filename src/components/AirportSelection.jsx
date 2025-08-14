@@ -1,4 +1,3 @@
-// AirportSelection.jsx
 import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import { GrUpdate, GrClearOption } from "react-icons/gr";
@@ -19,7 +18,6 @@ export default function AirportSelection({
   const [state_input, set_state_input] = useState("");
   const [dropdown_value, set_dropdown_value] = useState("");
 
-  // Notify parent when inputs change
   useEffect(() => {
     on_change({
       city: city_input.trim(),
@@ -29,7 +27,7 @@ export default function AirportSelection({
     });
   }, [city_input, state_input, code_input, name_input]);
 
-  // Prefill from BaseSelector pick
+  // prefill from BaseSelector picked idem
   function handle_select_airport(a) {
     const id = a ? String(a.id ?? a.airportId ?? "") : "";
 
@@ -42,7 +40,7 @@ export default function AirportSelection({
     }
   }
 
-  // Reset dropdown when user types
+  // reset dropdown selection if user types
   function handle_code_change(e) {
     set_code_input(e.target.value);
     set_dropdown_value("");
@@ -60,7 +58,6 @@ export default function AirportSelection({
     set_dropdown_value("");
   }
 
-  // Clear all
   function handle_clear_all() {
     set_code_input("");
     set_name_input("");
@@ -69,10 +66,9 @@ export default function AirportSelection({
     set_dropdown_value("");
   }
 
-  // Label helper for BaseSelector
   function getAirportLabel(a) {
     return `${a.city ?? ""}${a.state ? ", " + a.state : ""}, ${a.name ?? ""}${
-      a.code ? ", " + a.code : ""
+      a.code ? ", (" + a.code + ")" : ""
     }`;
   }
 
@@ -86,7 +82,6 @@ export default function AirportSelection({
           <input
             className="field input-city"
             id="city-input"
-            // placeholder="City"
             value={city_input}
             onChange={handle_city_change}
           />
@@ -98,7 +93,6 @@ export default function AirportSelection({
           <input
             className="field input-state"
             id="state-input"
-            // placeholder="State"
             value={state_input}
             onChange={handle_state_change}
           />
@@ -110,19 +104,17 @@ export default function AirportSelection({
           <input
             id="airport-code-input"
             className="field input-airport-code"
-            // placeholder="Airport code"
             value={code_input}
             onChange={handle_code_change}
           />
         </div>
         <div className="input-field-container">
           <label className="input-label" htmlFor="airport-name-input">
-            Airport name
+            Airport Name
           </label>
           <input
             id="airport-name-input"
             className="field input-airport-name"
-            // placeholder="Airport name"
             value={name_input}
             onChange={handle_name_change}
           />

@@ -34,8 +34,8 @@
 
 .home-main img {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Remove extra space under image */
+  height: auto;
+  display: block;
 }
 
 .flights-not-found {
@@ -49,8 +49,4 @@
   width: 100%;
   height: auto;
   display: block;
-}
-
-pre {
-  color: black;
 }

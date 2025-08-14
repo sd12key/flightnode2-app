@@ -9,7 +9,7 @@ export default function DatePicker({ value, onChange, label = "" }) {
   maxDate.setFullYear(today.getFullYear() + 2);
   const formatDate = (date) => date.toISOString().split("T")[0];
   return (
-    <div className="date-picker-container">
+    <div className="datepicker-container">
       {label && (
         <label htmlFor={id} className="date-label">
           {label}
