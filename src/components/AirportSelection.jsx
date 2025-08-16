@@ -68,7 +68,7 @@ export default function AirportSelection({
 
   function getAirportLabel(a) {
     return `${a.city ?? ""}${a.state ? ", " + a.state : ""}, ${a.name ?? ""}${
-      a.code ? ", (" + a.code + ")" : ""
+      a.code ? " (" + a.code + ")" : ""
     }`;
   }
 
