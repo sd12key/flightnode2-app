@@ -216,9 +216,7 @@ export default function AddFlight({
       </div>
 
       {statusFlight && (
-        <div className={`status ${statusFlight.kind} fade-out`}>
-          {statusFlight.msg}
-        </div>
+        <div className={`status ${statusFlight.kind}`}>{statusFlight.msg}</div>
       )}
     </section>
   );
