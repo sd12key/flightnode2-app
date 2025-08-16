@@ -18,7 +18,7 @@ html {
   font-weight: 400;
   font-style: normal;
   scroll-behavior: smooth;
-  /* user-select: none; */
+  user-select: none;
 }
 
 body {
@@ -103,6 +103,7 @@ section {
 input {
   font-family: var(--font_roboto_condensed);
 }
+
 .admin-theme {
   background-color: royalblue;
 }
@@ -219,6 +220,7 @@ input {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

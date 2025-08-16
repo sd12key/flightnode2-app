@@ -4,17 +4,8 @@ import "./AirportFlightDisplay.css";
 export default function AirportFlightDisplay({ flights }) {
   const airportData = organizeFlightsByAirport(flights);
 
-  const formatTime = (dateString) => {
-    return new Date(dateString).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    });
-  };
-
-  const formatDate = (dateString) => {
-    return new Date(dateString).toISOString().split("T")[0];
-  };
+  const formatDate = (dateString) => dateString.split("T")[0];
+  const formatTime = (dateString) => dateString.split("T")[1].slice(0, 5);
 
   return (
     <div className="afd-main">
